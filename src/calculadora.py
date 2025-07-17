@@ -13,7 +13,7 @@ ventana = tk.Tk()
 ventana.title("Calculadora")
 ventana.geometry("300x400")
 
-pantalla = tk.Entry(ventana, font=("Arial", 20), justify="right")
+pantalla = tk.Entry(ventana, font=("Arial", 25), justify="right")
 pantalla.pack(fill="x", padx=10, pady=10)
 
 botones = [

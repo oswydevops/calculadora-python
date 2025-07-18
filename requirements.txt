@@ -1,1 +1,1 @@
-tkinter  # (Normalmente incluido en Python estándar, no necesita instalación)
+  # (Normalmente incluido en Python estándar, no necesita instalación)

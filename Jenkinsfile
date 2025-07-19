@@ -4,13 +4,16 @@ pipeline {
     environment {
         GCP_PROJECT = 'calculadora-python-466204'  // Cambiar por tu proyecto GCP
         GCR_IMAGE = "gcr.io/${GCP_PROJECT}/calculadora-python:${BUILD_NUMBER}"
+        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials')
     }
 
     stages {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build(GCR_IMAGE)
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+                        docker.build("gcr.io/calculadora-python-466204/calculadora-python:10")
+                    }    
                 }
             }
         }
